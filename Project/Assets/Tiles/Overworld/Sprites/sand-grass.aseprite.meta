@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0bec2a55e36b6404298fbaa49dd090ee
+guid: eb9768f868f2fae4b837b87b0790a670
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638569386275288504
+  platformSettingsDirtyTick: 638570170708148414
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,7 +121,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: wall
+  - name: sand-grass
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 16
       height: 16
-    spriteID: 1e4c483f8b493a2408a77c1de364edee
+    spriteID: 41d5bb1c3d447734a9af5084030d1f5d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,20 +144,20 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -2064485746
-    name: wall
+    guid: 1559723033
+    name: sand-grass
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: wall
+    - name: sand-grass
       frameIndex: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
-      spriteId: 1e4c483f8b493a2408a77c1de364edee
+      spriteId: 41d5bb1c3d447734a9af5084030d1f5d
     linkedCells: []
     parentIndex: -1
   platformSettings:

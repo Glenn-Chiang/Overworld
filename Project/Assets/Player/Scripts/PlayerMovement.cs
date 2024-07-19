@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
         var lookDir = cursorPos - transform.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         transform.eulerAngles = new Vector3(0, 0, angle);
+
         rb.MovePosition(rb.position + moveDir * speed * Time.deltaTime);
     }
 }
