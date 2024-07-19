@@ -5,10 +5,11 @@ using UnityEngine.Tilemaps;
 
 public class WorldGenerator : MonoBehaviour
 {
-    private TileType[,] grid;
     [SerializeField] private Tilemap tilemap;
     [SerializeField] private int mapRows;
     [SerializeField] private int mapCols;
+    private float MapWidth => mapCols * tilemap.cellSize.x;
+    private float MapHeight => mapRows * tilemap.cellSize.y;
     [SerializeField] private float density; // Proportion of tiles that are walls
 
     [Serializable]
@@ -30,6 +31,8 @@ public class WorldGenerator : MonoBehaviour
 
     void Start()
     {
+        tilemap.transform.position = new Vector2(-MapWidth / 2, -MapHeight / 2);
+
         int totalCells = mapRows * mapCols;
         int emptyCells = (int)((1 - density) * totalCells);
         var randomWalker = new RandomWalker(mapRows, mapCols, emptyCells);
