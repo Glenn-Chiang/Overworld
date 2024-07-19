@@ -389,6 +389,7 @@ MonoBehaviour:
   tilemap: {fileID: 1314309165}
   mapRows: 16
   mapCols: 16
+  density: 0.2
   tiles:
     _Buckets: 0100000000000000ffffffff
     _HashCodes: 010000000000000000000000

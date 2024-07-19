@@ -1,7 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -11,6 +10,7 @@ public class WorldGenerator : MonoBehaviour
     [SerializeField] private Tilemap tilemap;
     [SerializeField] private int mapRows;
     [SerializeField] private int mapCols;
+    [SerializeField] private float density; // Proportion of tiles that are walls
 
     [Serializable]
     public enum TileType
@@ -33,31 +33,32 @@ public class WorldGenerator : MonoBehaviour
     {
         // Initialize grid with empty tiles
         // The grid only stores the TileType at each cell in the grid, not actual Tile objects
-        grid = new TileType[mapRows, mapCols];
+        // grid = new TileType[mapRows, mapCols];
+
+        int totalCells = mapRows * mapCols;
+        int emptyCells = (int)((1 - density) * totalCells);
+        var randomWalker = new RandomWalker(mapRows, mapCols, emptyCells);
+        var grid = randomWalker.Generate();
 
         for (int i = 0; i < mapRows; i++)
         {
             for (int j = 0; j < mapCols; j++)
             {
-                grid[i, j] = TileType.WALL;
+                if (grid[i, j])
+                {
+                    SetTile(i, j, TileType.WALL);
+                } else
+                {
+                    SetTile(i, j, TileType.EMPTY);
+                }
             }
         }
 
-        setTiles();
     }
 
-    // Place tile assets according to the grid
-    private void setTiles()
+    private void SetTile(int row, int col, TileType tileType)
     {
-        for (int i = 0; i < grid.GetLength(0); i++)
-        {
-            for (int j = 0; j < grid.GetLength(1); j++)
-            {
-                TileType tileType = grid[i, j];
-                Tile tile = tiles[tileType];
-                var position = new Vector3Int(i, j);
-                tilemap.SetTile(position, tile);
-            }
-        }
+        var position = new Vector3Int(row, col);
+        tilemap.SetTile(position, tiles[tileType]);
     }
 }
