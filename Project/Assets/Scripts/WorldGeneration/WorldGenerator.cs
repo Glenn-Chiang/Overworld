@@ -1,6 +1,5 @@
 using System;
 using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -31,10 +30,6 @@ public class WorldGenerator : MonoBehaviour
 
     void Start()
     {
-        // Initialize grid with empty tiles
-        // The grid only stores the TileType at each cell in the grid, not actual Tile objects
-        // grid = new TileType[mapRows, mapCols];
-
         int totalCells = mapRows * mapCols;
         int emptyCells = (int)((1 - density) * totalCells);
         var randomWalker = new RandomWalker(mapRows, mapCols, emptyCells);
@@ -54,6 +49,23 @@ public class WorldGenerator : MonoBehaviour
             }
         }
 
+        // Set the boundaries of the grid to wall tiles
+        for (int col = 0; col < mapCols; col++)
+        {
+            // Top row
+            SetTile(0, col, TileType.WALL);
+            // Bottom row
+            SetTile(mapRows - 1, col, TileType.WALL);
+        }
+        for (int row = 0; row < mapRows; row++)
+        {
+            // Leftmost col
+            SetTile(row, 0, TileType.WALL);
+            // Rightmost col
+            SetTile(row, mapCols - 1, TileType.WALL);
+        }
+
+        
     }
 
     private void SetTile(int row, int col, TileType tileType)
