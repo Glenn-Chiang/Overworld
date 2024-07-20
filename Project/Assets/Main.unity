@@ -875,10 +875,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 64
   height: 64
-  scale: 0
-  octaves: 0
-  persistence: 0
-  lacunarity: 1
+  scale: 25
+  octaves: 4
+  lacunarity: 2
+  persistence: 0.5
   seed: 0
   tileSet: {fileID: 11400000, guid: 398c0851f7c76a9488efcc1d8f7aa144, type: 2}
   mapDisplay: {fileID: 1500839483}

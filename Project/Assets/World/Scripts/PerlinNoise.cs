@@ -32,8 +32,9 @@ public static class PerlinNoise
         {
             for (int x = 0; x < width; x++)
             {
-                float amplitude = 1;
                 float frequency = 1;
+                float amplitude = 1;
+               
                 float noiseHeight = 0;
 
                 for (int i = 0; i < octaves; i++)
@@ -44,10 +45,12 @@ public static class PerlinNoise
                     float perlinValue = Mathf.PerlinNoise(sampleX, sampleY) * 2 - 1;
                     noiseHeight += perlinValue * amplitude;
 
-                    amplitude *= persistence;
+                    // Each octave has a higher frequency and lower amplitude than the previous one
                     frequency *= lacunarity;
+                    amplitude *= persistence;
                 }
 
+                // Update max and min noise heights
                 maxNoiseHeight = Mathf.Max(maxNoiseHeight, noiseHeight);
                 minNoiseHeight = Mathf.Min(minNoiseHeight, noiseHeight);
 

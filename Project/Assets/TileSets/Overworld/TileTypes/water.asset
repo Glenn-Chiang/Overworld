@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: water
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: 57a16911895ed964fa92d126f277a060, type: 2}
-  height: 0.4
+  height: 0.3

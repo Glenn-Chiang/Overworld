@@ -5,11 +5,19 @@ public class MapGenerator : MonoBehaviour
 {
     [SerializeField] private int width;
     [SerializeField] private int height;
+    
+    // At what distance to view the noise map. Higher scale yields smoother terrain.
     [SerializeField] private float scale;
-
-    [SerializeField] private int octaves;
-    [SerializeField, Range(0, 1)] private float persistence;
-    [SerializeField] private float lacunarity;
+    // More octaves yields rougher and more detailed terrain
+    [SerializeField] private int octaves; 
+    
+    // Controls how much the frequency increases for each subsequent octave
+    // Higher lacunarity yields rougher and more detailed terrain
+    [SerializeField] private float lacunarity; 
+    
+    // Controls how much the ampltiude decreases for each subsequent octave
+    // Higher persistence yield rougher and more detailed terrain
+    [SerializeField, Range(0, 1)] private float persistence; // Controls amplitude: how much each detail influences the overall shape
 
     [SerializeField] private int seed;
 

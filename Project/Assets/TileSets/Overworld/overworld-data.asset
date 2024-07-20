@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: overworld-data
   m_EditorClassIdentifier: 
   tileTypes:
-  - {fileID: 11400000, guid: 3571a4b63bcd91a4d8b72c2e8b143490, type: 2}
-  - {fileID: 11400000, guid: dc6b4271458919d41b3246bfbfab64fb, type: 2}
   - {fileID: 11400000, guid: 5763c7b311dc708418d6b08519f7a3ff, type: 2}
+  - {fileID: 11400000, guid: dc6b4271458919d41b3246bfbfab64fb, type: 2}
+  - {fileID: 11400000, guid: 3571a4b63bcd91a4d8b72c2e8b143490, type: 2}
