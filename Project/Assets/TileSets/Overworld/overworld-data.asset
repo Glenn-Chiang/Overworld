@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8500daf8d5c94ea45a8224d853923114, type: 3}
-  m_Name: overworld
+  m_Name: overworld-data
   m_EditorClassIdentifier: 
-  tiles:
+  tileTypes:
   - {fileID: 11400000, guid: 3571a4b63bcd91a4d8b72c2e8b143490, type: 2}
+  - {fileID: 11400000, guid: dc6b4271458919d41b3246bfbfab64fb, type: 2}
+  - {fileID: 11400000, guid: 5763c7b311dc708418d6b08519f7a3ff, type: 2}
