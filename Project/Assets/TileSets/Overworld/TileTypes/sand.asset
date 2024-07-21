@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1512b3bc3b4c4a6479a3fc4fd3b1498e, type: 3}
   m_Name: sand
   m_EditorClassIdentifier: 
-  tile: {fileID: 11400000, guid: 2293e615493192d4a9078684da2626a6, type: 2}
+  tile: {fileID: 11400000, guid: cec39a1999d922b49b5882f845c38f07, type: 2}
   height: 0.6
