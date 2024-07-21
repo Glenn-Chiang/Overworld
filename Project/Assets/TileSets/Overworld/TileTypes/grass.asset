@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1512b3bc3b4c4a6479a3fc4fd3b1498e, type: 3}
   m_Name: grass
   m_EditorClassIdentifier: 
-  tile: {fileID: 11400000, guid: c044c4cd10efc6c498549cfffc6aa950, type: 2}
+  tile: {fileID: 11400000, guid: 69a6c26e2d5d00f4197461de49c6c44a, type: 2}
   height: 1
